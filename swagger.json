@@ -1,0 +1,52 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Api de Usuarios Itsa",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/itsa/users": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Should return all users"
+          }
+        }
+      }
+    },
+    "/itsa/newuser": {
+      "post": {
+        "description": "Add a new user",
+        "responses": {
+          "200": {
+            "description": "User added successfully"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "description": "The user's first name"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "description": "The user's last name"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "The user's email address"
+                  }
+                },
+                "required": ["firstName", "lastName", "email"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
